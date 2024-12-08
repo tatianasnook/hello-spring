@@ -28,11 +28,12 @@ public class HelloController {
     // Handles requests of the form /hello/LaunchCode
     @GetMapping("hello/{name}")
     public String helloWithPathParam(@PathVariable String name, Model model) {
-        model.addAttribute("greeting", "Hello, " + name + "!");
+        String greeting = "Hello, " + name + "!";
+        model.addAttribute("greeting", greeting);
         return "hello";
     }
 
-    //handle request http://localhost:8080/form
+    //handle request http://localhost:8080/form - using static template
     @GetMapping("form")
     public String helloForm() {
         return "form";
